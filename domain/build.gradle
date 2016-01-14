@@ -1,0 +1,8 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+dependencies {
+  providedCompile libDaggerCompiler
+  compile libDagger
+  compile libRxJava
+}

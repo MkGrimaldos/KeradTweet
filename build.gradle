@@ -1,0 +1,53 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:1.5.0'
+    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+  }
+}
+
+allprojects {
+  ext {
+    androidCompileSdkVersion = 23
+    androidBuildToolsVersion = "22.0.1"
+    androidMinSdkVersion = 15
+    androidTargetSdkVersion = 23
+    androidVersionCode = 1
+    androidVersionName = '1.0'
+
+    supportLibraryVersion = '23.1.1'
+
+    libAppCompat = "com.android.support:appcompat-v7:${supportLibraryVersion}"
+    libSupportDesign = "com.android.support:design:${supportLibraryVersion}"
+
+    libCircularProgressBar = 'com.github.castorflex.smoothprogressbar:library-circular:1.1.0'
+
+    libRetrofit = 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
+    libRxJava = 'io.reactivex:rxjava:1.1.0'
+    libRxAndroid = 'io.reactivex:rxandroid:1.1.0'
+
+    libDaggerCompiler = 'com.google.dagger:dagger-compiler:2.0.1'
+    libDagger = 'com.google.dagger:dagger:2.0.1'
+
+    libButterKnife = 'com.jakewharton:butterknife:7.0.1'
+
+    libGson = 'com.google.code.gson:gson:2.4'
+
+    libAnnotations = 'javax.annotation:jsr250-api:1.0'
+    libTwitter = 'com.twitter.sdk.android:twitter:1.11.0@aar'
+  }
+  repositories {
+    jcenter()
+  }
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}

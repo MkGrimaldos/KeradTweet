@@ -1,0 +1,36 @@
+apply plugin: 'com.android.library'
+
+repositories {
+  maven { url 'https://maven.fabric.io/public' }
+}
+
+android {
+  compileSdkVersion androidCompileSdkVersion
+  buildToolsVersion androidBuildToolsVersion
+
+  defaultConfig {
+    minSdkVersion androidMinSdkVersion
+    targetSdkVersion androidTargetSdkVersion
+    versionCode androidVersionCode
+    versionName androidVersionName
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  compile project(':domain')
+  compile libAppCompat
+  compile libAnnotations
+  compile libRetrofit
+  compile libGson
+  compile libRxJava
+  compile libRxAndroid
+  compile(libTwitter) {
+    transitive = true;
+  }
+}
